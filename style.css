@@ -1,0 +1,25 @@
+#sheet{
+    display:none;
+}
+#sheetWeapons{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.sheetWeaponsData{
+    border: 1px solid black;
+}
+#sheetAbilityScores{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.sheetAbilityScoresData{
+    border: 1px solid black; 
+}
+
+tr{
+    font-weight:400;
+}
+
+#sheetSpells{
+    display:none;
+}

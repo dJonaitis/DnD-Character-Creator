@@ -1,0 +1,268 @@
+<HTML>
+    <HEAD>
+        <link rel="stylesheet" href="style.css">
+    </HEAD>
+    <BODY>
+        <h1>D&D Fifth Edition Character Builder</h1>
+        <div id="creator">
+            <table>
+                <tr>
+                    <td>
+                            <form>
+                                <label>Character name: </label>
+                                <input type="text" id="nameInput"></input> 
+                            </form>              
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select id="pcRace">
+                            <option value="0">Race...</option>
+                            <option value="Human">Human</option>
+                            <option value="hillDwarf">Hill Dwarf</option>
+                            <option value="highElf">High Elf</option>
+                            <option value="lightfootHalfling">Lightfoot Halfling</option>
+                            <option value="dragonborn">Dragonborn</option>
+                            <option value="rockGnome">Rock Gnome</option>
+                            <option value="halfElf">Half-Elf</option>
+                            <option value="halfOrc">Half-Orc</option>
+                            <option value="tiefling">Tiefling</option>
+                            
+                        </select>
+                    </td>
+                    <td>
+                        <select id="pcClass">
+                            <option value="0">Class...</option>
+                            <option value="Barbarian">Barbarian</option>
+                            <option value="Bard">Bard</option>
+                            <option value="Cleric">Cleric</option>
+                            <option value="Druid">Druid</option>
+                            <option value="Fighter">Fighter</option>
+                            <option value="Monk">Monk</option>
+                            <option value="Paladin">Paladin</option>
+                            <option value="Ranger">Ranger</option>
+                            <option value="Rogue">Rogue</option>
+                            <option value="Sorcerer">Sorcerer</option>
+                            <option value="Warlock">Warlock</option>
+                            <option value="Wizard">Wizard</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select id="pcBackground">
+                            <option value="0">Background...</option>
+                            <option value="Acolyte">Acolyte</option>
+                            <option value="Charlatan">Charlatan</option>
+                            <option value="Criminal">Criminal</option>
+                            <option value="Spy">Spy</option>
+                            <option value="Entertainer">Entertainer</option>
+                            <option value="FolkHero">Folk Hero</option>
+                            <option value="GuildArtisan">Guild Artisan</option>
+                            <option value="Hermit">Hermit</option>
+                            <option value="Noble">Noble</option>
+                            <option value="Outlander">Outlander</option>
+                            <option value="Sage">Sage</option>
+                            <option value="Sailor">Sailor</option>
+                            <option value="Soldier">Soldier</option>
+                            <option value="Urchin">Urchin</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="pcAlignment">
+                            <option value="0">Alignment...</option>
+                            <option value="LG">Lawful Good</option>
+                            <option value="NG">Neutral Good</option>
+                            <option value="CG">Chaotic Good</option>
+                            <option value="LN">Lawful Neutral</option>
+                            <option value="TN">True Neutral</option>
+                            <option value="CN">Chaotic Neutral</option>
+                            <option value="LE">Lawful Evil</option>
+                            <option value="NE">Neutral Evil</option>
+                            <option value="CE">Chaotic Evil</option>
+                        </select>  
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="submit()">Create character</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="sheet">
+                    <h4 id="sheetName">Name: </h4>
+                    <div id="sheetRaceClass"></div>
+                    <div id="sheetBackground">Background: </div>
+                    <div id="sheetAlignment">Alignment: </div>
+                    <br>
+                    <div id="sheetHP">HP: </div>
+                    <div id="sheetAC">AC: </div>
+                    <div id="sheetSpeed">Speed: </div>
+                    <br>
+                    <table id="sheetAbilityScores">
+                        <tr>
+                            <td class="sheetAbilityScoresData" >STR: </td>
+                            <td class="sheetAbilityScoresData"  id="sheetSTR"></td>
+                            <td class="sheetAbilityScoresData"  id="sheetmSTR"></td>
+                        </tr>
+                        <tr>
+                            <td class="sheetAbilityScoresData" >DEX: </td>
+                            <td class="sheetAbilityScoresData"  id="sheetDEX"></td>
+                            <td class="sheetAbilityScoresData"  id="sheetmDEX"></td>
+                        </tr>
+                        <tr>
+                            <td class="sheetAbilityScoresData" >CON: </td>
+                            <td class="sheetAbilityScoresData"  id="sheetCON"></td>
+                            <td class="sheetAbilityScoresData"  id="sheetmCON"></td>
+                        </tr>
+                        <tr>
+                            <td class="sheetAbilityScoresData" >INT: </td>
+                            <td class="sheetAbilityScoresData"  id="sheetINT"></td>
+                            <td class="sheetAbilityScoresData" id="sheetmINT"></td>
+                        </tr>
+                        <tr>
+                            <td class="sheetAbilityScoresData" >WIS: </td>
+                            <td class="sheetAbilityScoresData"  id="sheetWIS"></td>
+                            <td class="sheetAbilityScoresData"  id="sheetmWIS"></td>
+                        </tr>
+                        <tr>
+                            <td class="sheetAbilityScoresData" >CHA: </td>
+                            <td class="sheetAbilityScoresData" id="sheetCHA"></td>
+                            <td class="sheetAbilityScoresData" id="sheetmCHA"></td>
+                        </tr>
+                        
+                    </table>
+                    <br>
+                    <table id="sheetSkills">
+                        <tr id="trAcrobatics">
+                            <td>Acrobatics:</td>
+                            <td id="sheetAcrobatics"></td>
+                        </tr>
+                        <tr id="trAnimalHandling">
+                            <td>Animal Handling:</td>
+                            <td id="sheetAnimalHandling"></td>
+                        </tr>
+                        <tr id="trArcana">
+                            <td>Arcana:</td>
+                            <td id="sheetArcana"></td>
+                        </tr>
+                        <tr id="trAthletics">
+                            <td>Athletics:</td>
+                            <td id="sheetAthletics"></td>
+                        </tr>
+                        <tr id="trDeception">
+                            <td>Deception:</td>
+                            <td id="sheetDeception"></td>
+                        </tr>
+                        <tr id="trHistory">
+                            <td>History:</td>
+                            <td id="sheetHistory"></td>
+                        </tr>
+                        <tr id="trInsight">
+                            <td>Insight:</td>
+                            <td id="sheetInsight"></td>
+                        </tr>
+                        <tr id="trIntimidation">
+                            <td>Intimidation:</td>
+                            <td id="sheetIntimidation"></td>
+                        </tr>
+                        <tr id="trInvestigation">
+                            <td>Investigation:</td>
+                            <td id="sheetInvestigation"></td>
+                        </tr>
+                        <tr id="trMedicine">
+                            <td>Medicine:</td>
+                            <td id="sheetMedicine"></td>
+                        </tr>
+                        <tr id="trNature">
+                            <td>Nature:</td>
+                            <td id="sheetNature"></td>
+                        </tr>
+                        <tr id="trPerception">
+                            <td>Perception:</td>
+                            <td id="sheetPerception"></td>
+                        </tr>
+                        <tr id="trPerformance">
+                            <td>Performance:</td>
+                            <td id="sheetPerformance"></td>
+                        </tr>
+                        <tr id="trPersuasion">
+                            <td>Persuasion:</td>
+                            <td id="sheetPersuasion"></td>
+                        </tr>
+                        <tr id="trReligion">
+                            <td>Religion:</td>
+                            <td id="sheetReligion"></td>
+                        </tr>
+                        <tr id="trSleightOfHand">
+                            <td>Sleight of Hand:</td>
+                            <td id="sheetSleightOfHand"></td>
+                        </tr>
+                        <tr id="trStealth">
+                            <td>Stealth:</td>
+                            <td id="sheetStealth"></td>
+                        </tr>
+                        <tr id="trSurvival">
+                            <td>Survival:</td>
+                            <td id="sheetSurvival"></td>
+                        </tr>
+
+                    </table>
+                    <br>
+                    <div id="sheetClassAbility"></div>
+                    <br>
+                    <div id="inventory">Equipment: </div>
+                    <br>
+                    <table id="sheetWeapons">
+                        <tr>
+                            <th class="sheetWeaponsData">Weapon Name</th>
+                            <th class="sheetWeaponsData">Attack Bonus</th>
+                            <th class="sheetWeaponsData">Damage</th>
+                        </tr>
+                        <tr>
+                            <td class="sheetWeaponsData" id="weaponName1"></td>
+                            <td class="sheetWeaponsData" id="weaponBonus1"></td>
+                            <td class="sheetWeaponsData" id="weaponDamage1"></td>
+                        </tr>
+                        <tr>
+                            <td class="sheetWeaponsData" id="weaponName2"></td>
+                            <td class="sheetWeaponsData" id="weaponBonus2"></td>
+                            <td class="sheetWeaponsData" id="weaponDamage2"></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div id="sheetSpells">
+                        <h3>Spellcasting</h3>
+                        <div id="spellAbility">Spellcasting ability: </div>
+                        <div id="spellAtkBonus">Spell attack bonus: </div>
+                        <div id="spellSaveDC">Spell save DC: </div>
+                        <h4>Cantrips</h4>
+                        <ul>
+                            <li id="cantrip1"></li>
+                            <li id="cantrip2"></li>
+                            <li id="cantrip3"></li>
+                            <li id="cantrip4"></li>
+                        </ul>
+                        <br>
+                        <h4>Level 1</h4>
+                        <h5 id="lvl1SpellSlots">Slots: 2</h5>
+                        <ul>
+                            <li id="lvl1Spell1"></li>
+                            <li id="lvl1Spell2"></li>
+                            <li id="lvl1Spell3"></li>
+                            <li id="lvl1Spell4"></li>
+                            <li id="lvl1Spell5"></li>
+                            <li id="lvl1Spell6"></li>
+                        </ul>
+                    </div>
+        </div> 
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="weapons.js"></script>
+        <script src="races.js"></script>
+        <script src="classes.js"></script>
+        <script src="armor.js"></script>
+        <script src="backgrounds.js"></script>
+        <script src="script.js"></script>
+    </BODY>
+</HTML>
