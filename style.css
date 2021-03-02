@@ -1,6 +1,9 @@
 #sheet{
     display:none;
 }
+#about{
+    display:none;
+}
 #sheetWeapons{
     border-collapse: collapse;
     border: 1px solid black;
@@ -19,7 +22,22 @@
 tr{
     font-weight:400;
 }
+th{
+    border-collapse:collapse;
+    border: 1px solid black;
+}
 
 #sheetSpells{
     display:none;
+}
+
+#sheetStats,#sheetSkills{
+    border-collapse:collapse;
+    border:1px solid black;
+}
+#about{
+    width:50vw;
+}
+#inventory, #sheetClassAbility{
+    width:30vw;
 }

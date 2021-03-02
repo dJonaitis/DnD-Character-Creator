@@ -492,6 +492,7 @@ function submitClass(){
         arcana.proficiency = true;
         //Give weapons
         player.weapons.push(quarterstaff);
+        player.ac = Math.floor((player.DEX-10)/2) + 10;
         //Inventory
         player.inventory = "A wand, spellbook, book of lore, bottle of ink, backpack, ink pen, 10 sheets of parchment, little bag of sand, small knife"
         //Hit dice
@@ -949,7 +950,7 @@ function writeWeapons(){
 }
 
 function writeSpells(){
-    if(player.class == "Sorcerer" || player.class == "Bard" || player.class == "Warlock" || player.class == "Paladin"){
+    if(player.class == "Sorcerer" || player.class == "Bard" || player.class == "Fiend Warlock" || player.class == "Paladin"){
         player.spellAbility = player.mCHA;
     } else if(player.class == "Wizard"){
         player.spellAbility = player.mINT;
@@ -992,4 +993,13 @@ function submit(){
     $("#weaponName2").html(player.weapons[1].name);
     $("#weaponBonus2").html(player.weapons[1].attackBonus);
     $("#weaponDamage2").html(player.weapons[1].damageDice + " + " + player.weapons[1].damageBonus + " " + player.weapons[1].damageType);
+}
+
+function creatorAbout(){
+    $("#creator").hide();
+    $("#about").show();
+}
+function aboutCreator(){
+    $("#creator").show();
+    $("#about").hide();
 }
